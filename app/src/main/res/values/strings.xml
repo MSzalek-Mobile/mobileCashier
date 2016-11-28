@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">hajsoLicznik</string>
+    <string name="buyin">Buy in</string>
+    <string name="buyin_hint">Wprowadź kwotę</string>
+    <string name="buyin_checkbox_debt">Na kreskę</string>
+    <string name="btn_cancel">Anuluj</string>
+    <string name="btn_confirm">Zatwierdź</string>
+</resources>
