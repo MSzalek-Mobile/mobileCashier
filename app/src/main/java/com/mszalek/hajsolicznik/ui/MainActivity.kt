@@ -3,19 +3,17 @@ package com.mszalek.hajsolicznik.ui
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.ActivityOptionsCompat
+import android.support.v4.util.Pair
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.Toast
+import android.view.Window
 import com.daimajia.swipe.util.Attributes
 import com.mszalek.hajsolicznik.R
 import com.mszalek.hajsolicznik.data.models.GameManager
 import com.mszalek.hajsolicznik.data.models.Player
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import android.support.v4.util.Pair
-import android.transition.Fade
-import android.view.Window
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,13 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         setUpRecyclerView()
-
-        val fade = Fade()
-        fade.excludeTarget(android.R.id.statusBarBackground, true)
-        fade.excludeTarget(android.R.id.navigationBarBackground, true)
-        fade.excludeTarget(R.id.toolbar, true)
-        window.exitTransition = fade
-        window.enterTransition = fade
     }
 
     private fun setUpRecyclerView() {
