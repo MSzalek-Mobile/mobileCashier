@@ -2,6 +2,7 @@ package com.mszalek.hajsolicznik.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.util.Pair
 import android.support.v7.app.AppCompatActivity
@@ -22,8 +23,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        fab.setOnClickListener { openNewPlayerDialog(fab) }
         setUpRecyclerView()
+    }
+
+    private fun openNewPlayerDialog(fab: FloatingActionButton) {
+        val intent = Intent(this, NewPlayerActivity::class.java)
+        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this, fab, getString(R.string.transition_new_player))
+        startActivity(intent, options.toBundle())
     }
 
     private fun setUpRecyclerView() {

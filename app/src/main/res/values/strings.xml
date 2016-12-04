@@ -5,4 +5,7 @@
     <string name="buyin_checkbox_debt">Na kreskę</string>
     <string name="btn_cancel">Anuluj</string>
     <string name="btn_confirm">Zatwierdź</string>
+    <string name="newplayer_name_hint">Imię</string>
+    <string name="new_player">Nowy gracz</string>
+    <string name="newplayer_buyin_hint">Hajs na start</string>
 </resources>

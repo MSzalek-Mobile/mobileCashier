@@ -14,6 +14,11 @@ class GameManager(
         addPlayer(Player("Monty"))
         addPlayer(Player("Szałek"))
         addPlayer(Player("Patryk"))
+        addPlayer(Player("Kocioł"))
+        addPlayer(Player("Rafał"))
+        addPlayer(Player("Monty"))
+        addPlayer(Player("Szałek"))
+        addPlayer(Player("Patryk"))
 
         players[0].buyIn(50)
         players[1].buyIn(50)

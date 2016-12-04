@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string translatable="false" name="transition_buyin">transition_buyin</string>
-    <string translatable="false" name="transition_player_back">transition_player_back</string>
-    <string translatable="false" name="transition_player_row">transition_player_card</string>
-    <string translatable="false" name="transition_player_name">transition_player_name</string>
-    <string translatable="false" name="transition_player_balance">transition_player_balance</string>
-    <string translatable="false" name="transition_player_fab">transition_player_fab</string>
-
+    <string name="transition_new_player" translatable="false">transition_new_player</string>
+    <string name="transition_buyin" translatable="false">transition_buyin</string>
+    <string name="transition_player_back" translatable="false">transition_player_back</string>
+    <string name="transition_player_row" translatable="false">transition_player_card</string>
+    <string name="transition_player_name" translatable="false">transition_player_name</string>
+    <string name="transition_player_balance" translatable="false">transition_player_balance</string>
+    <string name="transition_player_fab" translatable="false">transition_player_fab</string>
 </resources>

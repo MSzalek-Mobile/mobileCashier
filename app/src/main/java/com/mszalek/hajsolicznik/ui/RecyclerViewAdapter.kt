@@ -2,15 +2,9 @@ package com.mszalek.hajsolicznik.ui
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-
-import com.daimajia.swipe.SimpleSwipeListener
 import com.daimajia.swipe.SwipeLayout
 import com.daimajia.swipe.adapters.RecyclerSwipeAdapter
 import com.mszalek.hajsolicznik.R
@@ -18,11 +12,7 @@ import com.mszalek.hajsolicznik.data.models.Player
 import kotlinx.android.synthetic.main.recycler_item.view.*
 import kotlinx.android.synthetic.main.row_player_balance.view.*
 
-import java.util.ArrayList
-
 class RecyclerViewAdapter
-//protected SwipeItemRecyclerMangerImpl mItemManger = new SwipeItemRecyclerMangerImpl(this);
-
 (private val mContext: Context, private val mDataset: List<Player>,
  var funBuyInClick: (View, Player) -> Unit, var funPlayerClick: (View, Player) -> Unit) : RecyclerSwipeAdapter<RecyclerViewAdapter.SimpleViewHolder>() {
 

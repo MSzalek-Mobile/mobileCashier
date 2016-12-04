@@ -21,6 +21,9 @@
         <activity
             android:name=".ui.BuyInActivity"
             android:theme="@style/AppTheme.NoActionBar.Transparent" />
+        <activity
+            android:name=".ui.NewPlayerActivity"
+            android:theme="@style/AppTheme.NoActionBar.Transparent" />
         <activity android:name=".ui.PlayerActivity"
             android:theme="@style/AppTheme.NoActionBar.Transparent" />
     </application>
