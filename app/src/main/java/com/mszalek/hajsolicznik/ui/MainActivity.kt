@@ -1,5 +1,6 @@
 package com.mszalek.hajsolicznik.ui
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -23,15 +24,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
         fab.setOnClickListener { openNewPlayerDialog(fab) }
         setUpRecyclerView()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == Constants.REQUEST_CODES.NEW_PLAYER) {
+            if (resultCode == Activity.RESULT_OK) {
+                val player = data?.getSerializableExtra(Constants.RESPONSE_EXTRA_KEYS.NEW_PLAYER) as Player
+                gameManager.addPlayer(player)
+                recyclerView.adapter.notifyDataSetChanged()
+                recyclerView.scrollToPosition(recyclerView.adapter.itemCount - 1)
+            }
+        }
     }
 
     private fun openNewPlayerDialog(fab: FloatingActionButton) {
         val intent = Intent(this, NewPlayerActivity::class.java)
         val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this, fab, getString(R.string.transition_new_player))
-        startActivity(intent, options.toBundle())
+        startActivityForResult(intent, Constants.REQUEST_CODES.NEW_PLAYER, options.toBundle())
     }
 
     private fun setUpRecyclerView() {
