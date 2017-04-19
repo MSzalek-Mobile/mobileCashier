@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:clickable="true"
         android:elevation="24dp"
-        android:transitionName="@string/transition_buyin"
+        android:transitionName="@string/transition_checkout"
         app:cardCornerRadius="4dp">
 
         <LinearLayout
@@ -27,31 +27,58 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/buyin"
+                android:text="@string/checkout"
                 android:textColor="@android:color/black"
                 android:textSize="28sp" />
 
             <android.support.design.widget.TextInputLayout
+                android:animateLayoutChanges="true"
+                android:id="@+id/til_checkout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/inputBuyIn"
+                    android:id="@+id/et_checkout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/buyin_hint"
+                    android:hint="@string/checkout_hint"
                     android:inputType="number" />
 
             </android.support.design.widget.TextInputLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox"
+            <LinearLayout
+                android:id="@+id/layout_details"
+                android:visibility="gone"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/buyin_checkbox_debt" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvBuyIns"
+                    style="@style/single_checkout_textview" />
+
+                <TextView
+                    android:id="@+id/tvCheckouts"
+                    style="@style/single_checkout_textview" />
+
+                <TextView
+                    android:id="@+id/tvDebt"
+                    style="@style/single_checkout_textview" />
+
+                <TextView
+                    android:id="@+id/tvDebtNext"
+                    style="@style/single_checkout_textview" />
+
+                <TextView
+                    android:id="@+id/tvCashCheckout"
+                    style="@style/single_checkout_textview" />
+
+                <TextView
+                    android:id="@+id/tvBalance"
+                    style="@style/single_checkout_textview" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -69,7 +96,7 @@
                 <Button
                     android:id="@+id/btnConfirm"
                     style="@style/DialogButton"
-                    android:text="@string/btn_confirm"  />
+                    android:text="@string/btn_confirm" />
 
             </LinearLayout>
         </LinearLayout>

@@ -1,11 +1,35 @@
 <resources>
     <string name="app_name">hajsoLicznik</string>
+
+    <string name="menu_checkout">Checkout</string>
+
     <string name="buyin">Buy in</string>
+    <string name="checkout">Checkout</string>
+
+    <string name="checkout_hint">Ile masz w żetonach?</string>
+    <string name="checkout_msg_buyins" formatted="false">Wszedłeś za %d (%d z kartki)</string>
+    <string name="checkout_msg_checkouts">Skończyłeś z %d</string>
+    <string name="checkout_msg_debt" formatted="false">Z kartki spłaciłeś %d z %d</string>
+    <string name="checkout_msg_debt_next">Komuś przelejesz %d</string>
+    <string name="checkout_msg_cash_checkout">Z walizki możesz wyjąć %d</string>
+    <string name="checkout_msg_balance">Twój bilans to %d</string>
+
+    <string name="group_checkout_balance_dialog_title">Ups, coś poszło nie tak</string>
+    <string name="group_checkout_balance_dialog_msg_too_little_money">W walizce jest za mało hajsu o %d.\nPoliczcie jeszcze raz...</string>
+    <string name="group_checkout_balance_dialog_msg_too_much_money">W walizce jest za dużo hajsu o %d.\nPoliczcie jeszcze raz...</string>
+
     <string name="buyin_hint">Wprowadź kwotę</string>
     <string name="buyin_checkbox_debt">Na kreskę</string>
+
     <string name="btn_cancel">Anuluj</string>
     <string name="btn_confirm">Zatwierdź</string>
+
     <string name="newplayer_name_hint">Imię</string>
     <string name="new_player">Nowy gracz</string>
     <string name="newplayer_buyin_hint">Hajs na start</string>
+
+    <string name="row_player_balance">Bilans: %d</string>
+    <string name="row_player_cash_buy_ins">Gotówka: %d</string>
+    <string name="row_player_debt_buy_ins">Na kreskę: %d</string>
+    <string name="row_player_checkout">Checkout: %d</string>
 </resources>

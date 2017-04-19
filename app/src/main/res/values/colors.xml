@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="card_background">#FCF5D8</color>
+
+    <color name="button_disabled">#777777</color>
+
+    <color name="row_player_background">@android:color/white</color>
+    <color name="row_player_background_activated">#99DD99</color>
 </resources>

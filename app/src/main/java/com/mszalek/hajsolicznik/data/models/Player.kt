@@ -9,8 +9,13 @@ import java.util.*
 class Player(name: String) : Serializable {
 
     val buyIns: MutableList<BuyIn> = LinkedList()
+    var id: Int = -1
     val name: String
-    var checkout: Int = 0
+    var checkout: Int? = null
+
+    constructor(id: Int, name: String) : this(name) {
+        this.id = id
+    }
 
     init {
         this.name = name
@@ -37,18 +42,18 @@ class Player(name: String) : Serializable {
     }
 
     fun getBalance(): Int {
-        return checkout - getSumOfTotalBuyIns()
+        return (checkout ?: 0) - getSumOfTotalBuyIns()
     }
 
     fun isInDebt(): Boolean {
-        return getSumOfDebtBuyIns() > checkout
+        return getSumOfDebtBuyIns() > (checkout ?: 0)
     }
 
     /**
      * How much did the player took out from case
      */
     fun getCashCheckout(): Int {
-        val moneyTakenAboveDebtBuyIns = checkout - getSumOfDebtBuyIns()
+        val moneyTakenAboveDebtBuyIns = (checkout ?: 0) - getSumOfDebtBuyIns()
         val moneyTakenFromCase = if (moneyTakenAboveDebtBuyIns > 0) {
             moneyTakenAboveDebtBuyIns
         } else {

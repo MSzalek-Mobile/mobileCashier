@@ -2,6 +2,7 @@
 <resources>
     <string name="transition_new_player" translatable="false">transition_new_player</string>
     <string name="transition_buyin" translatable="false">transition_buyin</string>
+    <string name="transition_checkout" translatable="false">transition_checkout</string>
     <string name="transition_player_back" translatable="false">transition_player_back</string>
     <string name="transition_player_row" translatable="false">transition_player_card</string>
     <string name="transition_player_name" translatable="false">transition_player_name</string>

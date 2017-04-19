@@ -8,17 +8,19 @@ import java.util.*
 class GameManager(
         val players: MutableList<Player> = LinkedList()) {
 
+    var idCounter = 0
+
+    object singleton {
+        val instance = GameManager()
+    }
+
     init {
-        addPlayer(Player("Kocioł"))
-        addPlayer(Player("Rafał"))
-        addPlayer(Player("Monty"))
-        addPlayer(Player("Szałek"))
-        addPlayer(Player("Patryk"))
-        addPlayer(Player("Kocioł"))
-        addPlayer(Player("Rafał"))
-        addPlayer(Player("Monty"))
-        addPlayer(Player("Szałek"))
-        addPlayer(Player("Patryk"))
+        //TEMPORARY:
+        addPlayer(Player(++idCounter, "Kocioł"))
+        addPlayer(Player(++idCounter, "Rafał"))
+        addPlayer(Player(++idCounter, "Monty"))
+        addPlayer(Player(++idCounter, "Szałek"))
+        addPlayer(Player(++idCounter, "Patryk"))
 
         players[0].buyIn(50)
         players[1].buyIn(50)
@@ -34,11 +36,19 @@ class GameManager(
         players[4].buyIn(50, false)
     }
 
+    fun getPlayer(id: Int): Player {
+        return players.single { it.id == id }
+    }
+
     fun addPlayer(player: Player) {
+        player.id = ++idCounter
         players.add(player)
     }
 
-    fun getTotalChips(): Int {
+    /**
+     * Should always be 0, if not, somebody fucked up
+     */
+    fun getTotalBalance(): Int {
         return players.sumBy(Player::getBalance)
     }
 
@@ -49,4 +59,10 @@ class GameManager(
     fun isAnyPlayerInDebt(): Boolean {
         return players.any(Player::isInDebt)
     }
+
+    fun haveAllPlayersCheckedOut(): Boolean {
+        return players.all { it.checkout != null }
+    }
+
+
 }
